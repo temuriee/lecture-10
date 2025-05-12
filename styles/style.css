@@ -118,18 +118,39 @@ header {
   gap: 56px;
 }
 
-
 .burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 999;
 }
 
 .burger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333333;
+  width: 25px;
+  height: 3px;
+  background-color: #333333;
+}
+
+/* mobile navigation */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  /* right: -100%; */
+  right: 0%;
+  width: 70%;
+  height: 100%;
+  background-color: #f4f4f4;
+  z-index: 1000;
+  display: none;
+}
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mobile-menu a {
+  color: black;
 }
 
 /* Main */
@@ -165,12 +186,15 @@ section {
 
 /* ფრჩხილებში რა ზომასაც დავწერ, მარტო იმ ზომაზე იმოქმდებს ჩემს მიერ დაწერილი კოდი */
 @media (max-width: 880px) {
-  nav {
+  .desktop-menu {
     display: none;
   }
   .burger {
     display: flex;
-}
+  }
+  .mobile-menu {
+    display: flex;
+  }
 }
 
 /* თუ ეკრანი არის 1440 პიქსელი ან უფრო პატარა მაშინ padding-შეიცვალოს */
